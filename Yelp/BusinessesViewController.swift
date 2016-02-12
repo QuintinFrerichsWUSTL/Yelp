@@ -7,10 +7,12 @@
 //
 
 import UIKit
-
+import MapKit
 class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     var businesses: [Business]!
     var filteredData: [Business]!
+
+   
     var searchBar : UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -50,11 +52,29 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         searchBar.showsCancelButton = true
     }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        
+    }
+    
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchBar.showsCancelButton = false
         searchBar.text = ""
         searchBar.resignFirstResponder()
         filteredData = businesses
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        Business.searchWithTerm(searchBar.text!, completion: { (businesses: [Business]!, error: NSError!) -> Void in
+            self.businesses = businesses
+        })
+
+        tableView.reloadData()
     }
 
 /* Example of Yelp search with more search options specified

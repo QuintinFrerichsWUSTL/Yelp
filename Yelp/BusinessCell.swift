@@ -10,6 +10,7 @@ import UIKit
 
 class BusinessCell: UITableViewCell {
 
+    
     @IBOutlet weak var foodLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var reviewLabel: UILabel!
@@ -23,6 +24,8 @@ class BusinessCell: UITableViewCell {
             addressLabel.text = business.address
             reviewLabel.text = "\(business.reviewCount) Reviews"
             distanceLabel.text = business.distance
+                
+            
             thumImageView.setImageWithURL(business.imageURL!)
             ratingsImageView.setImageWithURL(business.ratingImageURL!)
             foodLabel.text = business.categories
