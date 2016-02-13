@@ -103,5 +103,12 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPathForCell(cell)
+        let business = businesses[indexPath!.row]
+        let detailsViewController = segue.destinationViewController as! DetailsViewController
+        detailsViewController.business = business
+    }
 
 }
