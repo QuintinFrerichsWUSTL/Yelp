@@ -22,11 +22,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BusinessCell" rowHeight="94" id="fr2-gd-ZYO" customClass="BusinessCell" customModule="Yelp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BusinessCell" rowHeight="94" id="fr2-gd-ZYO" customClass="BusinessCell" customModule="Yelp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="320" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fr2-gd-ZYO" id="3tX-zz-QxZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="93.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="93.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0X1-LA-Ggj">
@@ -111,6 +111,7 @@
                                             <outlet property="ratingsImageView" destination="lJq-KL-gne" id="dRd-Sy-wRG"/>
                                             <outlet property="reviewLabel" destination="YS5-C6-1Q6" id="SDL-Rk-csP"/>
                                             <outlet property="thumImageView" destination="0X1-LA-Ggj" id="NkB-Lw-gLX"/>
+                                            <segue destination="YeN-zz-ChA" kind="push" id="5Is-Zv-HAj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -145,42 +146,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ssb-PU-XBN">
-                                <rect key="frame" x="-6" y="58" width="331" height="181"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VPG-i4-gi6">
-                                <rect key="frame" x="0.0" y="236" width="320" height="332"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VPG-i4-gi6">
+                                <rect key="frame" x="0.0" y="59" width="320" height="510"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ch4-Bv-AHd">
-                                        <rect key="frame" x="5" y="8" width="45" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ch4-Bv-AHd">
+                                        <rect key="frame" x="0.0" y="14" width="194" height="21"/>
+                                        <color key="backgroundColor" red="0.85627003205128205" green="0.85627003205128205" blue="0.85627003205128205" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OT3-Uo-dwT">
-                                        <rect key="frame" x="283" y="8" width="18" height="17"/>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gz8-9H-QUk">
+                                        <rect key="frame" x="0.0" y="178" width="320" height="332"/>
+                                    </mapView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G2g-jv-y5g">
+                                        <rect key="frame" x="0.0" y="41" width="136" height="137"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HdW-S7-gAU">
+                                        <rect key="frame" x="229" y="14" width="83" height="15"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Dr-F7-qAp">
+                                        <rect key="frame" x="138" y="41" width="174" height="36"/>
+                                        <color key="backgroundColor" red="0.85260416666666661" green="0.85260416666666661" blue="0.85260416666666661" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0A-44-DLR">
-                                        <rect key="frame" x="5" y="32" width="63" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.75260416666666663" green="0.75260416666666663" blue="0.75260416666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.85362580128205123" green="0.85362580128205123" blue="0.85362580128205123" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="HdW-S7-gAU" secondAttribute="trailing" constant="8" id="F4Z-j1-C77"/>
+                                    <constraint firstItem="HdW-S7-gAU" firstAttribute="top" relation="lessThanOrEqual" secondItem="VPG-i4-gi6" secondAttribute="top" constant="8" id="bKS-kR-HIS"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="DyW-Fi-PKY" customClass="DetailsViewC"/>
                     <connections>
-                        <outlet property="categoryLabel" destination="f0A-44-DLR" id="jxK-Yj-UaV"/>
-                        <outlet property="thumbImageView" destination="Ssb-PU-XBN" id="Vss-lb-0bZ"/>
+                        <outlet property="addressLabel" destination="8Dr-F7-qAp" id="TRB-EO-ZWi"/>
+                        <outlet property="mapView" destination="gz8-9H-QUk" id="vTz-IC-age"/>
+                        <outlet property="ratingsImageView" destination="HdW-S7-gAU" id="Ty9-gb-DZl"/>
+                        <outlet property="thumbImageView" destination="G2g-jv-y5g" id="aiK-Ta-2ae"/>
                         <outlet property="titleLabel" destination="ch4-Bv-AHd" id="Y08-2J-xZD"/>
-                        <segue destination="XRc-d5-xHW" kind="push" id="Jl3-bx-pHJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36W-nW-ck6" userLabel="First Responder" sceneMemberID="firstResponder"/>

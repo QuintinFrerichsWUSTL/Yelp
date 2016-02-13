@@ -25,7 +25,8 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         searchBar.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
-      
+      navigationController!.navigationBar.tintColor = UIColor.redColor()
+        navigationController!.navigationBar.backgroundColor = UIColor.blackColor()
         Business.searchWithTerm(searchBar.text!, completion: { (businesses: [Business]!, error: NSError!) -> Void in
             self.businesses = businesses
             self.tableView.reloadData()
